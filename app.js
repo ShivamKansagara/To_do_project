@@ -137,6 +137,12 @@ app.get("/:custom", function (req, res) {
       console.error(err);
     });
 });
+
+app.post("/newCategory", function (req, res) {
+  const newCategory = req.body.newtype;
+  res.redirect("/" + newCategory);
+});
+
 const PORT = process.env.PORT || 3000; // Use uppercase "PORT"
 
 app.listen(PORT, function () {
